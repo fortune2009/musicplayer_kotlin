@@ -103,7 +103,18 @@ open class PlayerActivity : AppCompatActivity()
     }
 
     fun shuffle() {
-        mService?.onShuffle
+        mService?.onShuffle(songPlayerViewModel.isShuffleData.value ?: false)
+        songPlayerViewModel.shuffle()
+    }
+
+    fun repeatAll() {
+        mService?.onRepeatAll(songPlayerViewModel.isRepeatAllData.value ?: false)
+        songPlayerViewModel.repeatAll()
+    }
+
+    fun repeat() {
+        mService?.onRepeat(songPlayerViewModel.isRepeatData.value ?: false)
+        songPlayerViewModel.repeat()
     }
 
 
