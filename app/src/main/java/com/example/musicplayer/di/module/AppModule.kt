@@ -4,10 +4,13 @@ import com.example.musicplayer.domain.repository.PlaylistRepository
 import com.example.musicplayer.domain.usecase.DeleteSongUseCase
 import com.example.musicplayer.domain.usecase.GetSongsUseCase
 import com.example.musicplayer.domain.usecase.SaveSongDataUseCase
+import com.example.musicplayer.presentation.playlist.PlaylistViewModel
+import org.koin.android.viewmodel.compat.ScopeCompat.viewModel
+import org.koin.dsl.module
 
 val AppModule = module {
 
-    viewModel { PlaylistViewModel(get(), get(), get())}
+    viewModel { PlaylistViewModel(get(), get(), get()) }
 
     single { createGetSongsUseCase(get()) }
 
