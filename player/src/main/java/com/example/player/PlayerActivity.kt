@@ -6,8 +6,9 @@ import android.content.ServiceConnection
 import android.os.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.player.model.ASong
+import com.example.player.service.OnPlayServiceCallBack
 
-open class PlayerActivity : AppCompatActivity()
+open class PlayerActivity : AppCompatActivity(), OnPlayServiceCallBack
 {
 
     private var mService: SongPlayerService? = null
@@ -117,9 +118,7 @@ open class PlayerActivity : AppCompatActivity()
         songPlayerViewModel.repeat()
     }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_player)
+    override fun updateSongData(song: ASong) {
+        songPlayerViewModel.up
     }
 }
