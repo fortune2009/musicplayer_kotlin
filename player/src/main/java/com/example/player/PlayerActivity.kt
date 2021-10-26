@@ -5,8 +5,10 @@ import android.content.Context
 import android.content.ServiceConnection
 import android.os.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.player.SongPlayerViewModel.Companion.getPlayerViewModelInstance
 import com.example.player.model.ASong
 import com.example.player.service.OnPlayServiceCallBack
+import com.example.player.service.SongPlayerService
 
 open class PlayerActivity : AppCompatActivity(), OnPlayServiceCallBack
 {
